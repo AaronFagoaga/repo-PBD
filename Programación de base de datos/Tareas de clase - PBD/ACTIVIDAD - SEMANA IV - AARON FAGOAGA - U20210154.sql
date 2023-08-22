@@ -7,42 +7,42 @@ GO
 SELECT GroupName FROM HumanResources.Department GROUP BY GroupName
 GO
 
--- 3. Seleccione todos los departamentos ordenándolos en orden descendente. 
+-- 3. Seleccione todos los departamentos ordenÃ¡ndolos en orden descendente. 
 SELECT * FROM HumanResources.Department ORDER BY DepartmentID DESC
 GO
 
--- 4. Seleccione todos los departamentos ordenándolos en orden ascendente.
+-- 4. Seleccione todos los departamentos ordenÃ¡ndolos en orden ascendente.
 SELECT * FROM HumanResources.Department ORDER BY DepartmentID ASC
 GO
 -- 5. Seleccione todos los empleados de la tabla Employee del schema Human Resources.
 SELECT P.BusinessEntityID, P.FirstName, P.LastName FROM HumanResources.Employee E 
 INNER JOIN Person.Person P ON E.BusinessEntityID = P.BusinessEntityID
 GO
--- 6. Seleccione todos los empleados de la tabla Employee del schema Human Resources donde el género sea masculino. 
+-- 6. Seleccione todos los empleados de la tabla Employee del schema Human Resources donde el gÃ©nero sea masculino. 
 SELECT P.BusinessEntityID, P.FirstName, P.LastName, E.Gender FROM HumanResources.Employee E 
 INNER JOIN Person.Person P ON E.BusinessEntityID = P.BusinessEntityID
 WHERE E.Gender = 'M'
 GO
 
--- 7. Seleccione todos los empleados de la tabla Employee del schema Human Resources donde el nivel de organización sea mayor a 3. 
+-- 7. Seleccione todos los empleados de la tabla Employee del schema Human Resources donde el nivel de organizaciÃ³n sea mayor a 3. 
 SELECT P.BusinessEntityID, P.FirstName, P.LastName, E.OrganizationLevel FROM HumanResources.Employee E 
 INNER JOIN Person.Person P ON E.BusinessEntityID = P.BusinessEntityID
 WHERE E.OrganizationLevel > 3
 GO
 
--- 8. Seleccione todos los empleados de la tabla Employee del schema Human Resources donde el nivel de organización sea mayor e igual a 2 y que el género sea femenino.
+-- 8. Seleccione todos los empleados de la tabla Employee del schema Human Resources donde el nivel de organizaciÃ³n sea mayor e igual a 2 y que el gÃ©nero sea femenino.
 SELECT P.BusinessEntityID, P.FirstName, P.LastName, E.OrganizationLevel FROM HumanResources.Employee E 
 INNER JOIN Person.Person P ON E.BusinessEntityID = P.BusinessEntityID
 WHERE E.OrganizationLevel >= 2 AND E.Gender = 'F'
 GO
 
--- 9. Selección los campos BusinessEntityID,NationalIDNumber de la tabla Employee del schema Human Resources donde los jobtitle sean Marketing Assistant o Design Engineer. 
+-- 9. SelecciÃ³n los campos BusinessEntityID,NationalIDNumber de la tabla Employee del schema Human Resources donde los jobtitle sean Marketing Assistant o Design Engineer. 
 SELECT P.BusinessEntityID, P.FirstName, E.NationalIDNumber, E.JobTitle FROM HumanResources.Employee E 
 INNER JOIN Person.Person P ON E.BusinessEntityID = P.BusinessEntityID
 WHERE E.JobTitle = 'Marketing Assistant' OR E.JobTitle = 'Design Engineer'
 GO
 
--- 10. Seleccionar todos los empleados de la tabla Employee del schema Human Resources que estén entre la fecha de nacimiento de 1 de enero de 1969  y 31 de diciembre de 1972.
+-- 10. Seleccionar todos los empleados de la tabla Employee del schema Human Resources que estÃ©n entre la fecha de nacimiento de 1 de enero de 1969  y 31 de diciembre de 1972.
 SELECT P.BusinessEntityID, P.FirstName, E.BirthDate FROM HumanResources.Employee E 
 INNER JOIN Person.Person P ON E.BusinessEntityID = P.BusinessEntityID
 WHERE E.BirthDate BETWEEN '1969-1-1' AND '1972-12-31'
@@ -53,7 +53,7 @@ SELECT P.BusinessEntityID, P.FirstName, E.VacationHours, (E.VacationHours * 8.00
 INNER JOIN Person.Person P ON E.BusinessEntityID = P.BusinessEntityID
 GO
 
--- 12. De la tabla Production.ProductSubcategory muestre cuantas subcategorías hay registradas por categoría.
+-- 12. De la tabla Production.ProductSubcategory muestre cuantas subcategorÃ­as hay registradas por categorÃ­a.
 SELECT ProductCategoryID, COUNT(ProductSubcategoryID) AS 'Sub Categories' FROM Production.ProductSubcategory GROUP BY ProductCategoryID
 GO
 
@@ -61,10 +61,10 @@ GO
 SELECT TerritoryID, COUNT(CustomerID) AS 'Customers' FROM Sales.Customer GROUP BY TerritoryID
 GO
 
--- 14. De la tabla sales.SalesOrderHeader mostrar la suma total del Sub Total de compra según el IdCustomer que se coloque. 
+-- 14. De la tabla sales.SalesOrderHeader mostrar la suma total del Sub Total de compra segÃºn el IdCustomer que se coloque. 
 SELECT CustomerID, SUM(SubTotal) AS 'SubTotal Total' FROM Sales.SalesOrderHeader WHERE CustomerID = '29825' GROUP BY CustomerID
 GO
--- 15. De la tabla Sales. CreditCard mostrar cuantas tarjetas según su tipo están registradas en el sistema.
+-- 15. De la tabla Sales. CreditCard mostrar cuantas tarjetas segÃºn su tipo estÃ¡n registradas en el sistema.
 SELECT CardType, COUNT(CreditCardID) AS 'Cards' FROM Sales.CreditCard GROUP BY CardType
 GO
 
@@ -78,3 +78,5 @@ CASE
     END AS "Total to Pay"
 FROM Sales.SalesOrderDetail
 GO
+
+--Do it 4 Luichita!!!
